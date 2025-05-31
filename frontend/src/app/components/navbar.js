@@ -2,9 +2,8 @@
 
 export default function navbar() {
   return (
-    <div className="group fixed w-full -top-16 transition-transform duration-300 hover:translate-y-15 z-50">
-      <div>
-            <nav className="p-3 sm:p-4 text-white flex flex-wrap justify-between items-center">
+    <div className="group fixed w-full -top-18 transition duration-300 hover:translate-y-15 z-50">
+            <nav className="p-3 sm:p-4 text-white flex flex-wrap justify-between items-center rounded-xl border-4 border-indigo-500">
                 <h1 className="text-xl sm:text-2xl font-bold">Amar Koonar</h1>
                 <div className="space-x-2 sm:space-x-4 text-sm sm:text-base">
                 <a href="#home" className="hover:underline shadow-xl">Home</a>
@@ -15,8 +14,10 @@ export default function navbar() {
                 </div>
         </nav>
         <div className="h-16 w-full p-3 sm:p-4 text-white flex justify-between items-center">
+            <img src="/navbar1.png" alt="navbar icon" className="w-5 h-5">
+            </img>
         </div>
-      </div>
+      
     </div>
   );
 }
