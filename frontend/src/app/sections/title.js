@@ -80,7 +80,7 @@ export default function Titlepage() {
           {visible && (
             <>
 
-              <div className="text-white flex flex-wrap justify-center text-2xl sm:text-6xl md:text-8xl mb-4 text-center w-full px-4">
+              <div className="text-white flex flex-wrap justify-center text-2xl sm:text-6xl md:text-8xl mb-4 text-center w-full px-6">
 
                 {Title.map((letter, index) => (
                   <motion.span
@@ -97,7 +97,7 @@ export default function Titlepage() {
               </div>
 
 
-              <div className="text-white flex px-2 text-1xl lg:text-3xl font-bold flex-wrap justify-center mb-8">
+              <div className="text-white flex px-4 text-1xl lg:text-3xl font-bold flex-wrap justify-center mb-8">
                 {title_dis.map((letter, index) => (
                   <motion.span
                     key={`title-dis-${index}`}
