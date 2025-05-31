@@ -34,19 +34,19 @@ export default function Titlepage() {
 
   const diseVariants = [
     {
-      exit: { x: -1000, opacity: 0, transition: { duration: 0.5 } },
+      exit: { x: -1000, opacity: 0 },
     },
     {
-      exit: { x: 1000, opacity: 0, transition: { duration: 0.5 } },
+      exit: { x: 1000, opacity: 0},
     },
     {
-      exit: { y: -1000, opacity: 0, transition: { duration: 0.5 } },
+      exit: { y: -1000, opacity: 0},
     },
     {
-      exit: { y: 1000, opacity: 0, transition: { duration: 0.5 } },
+      exit: { y: 1000, opacity: 0},
     },
     {
-      exit: { scale: 5, opacity: 0, transition: { duration: 0.5 } },
+      exit: { scale: 5, opacity: 0 },
     },
   ];
 
@@ -80,7 +80,7 @@ export default function Titlepage() {
           {visible && (
             <>
 
-              <div className="text-white flex flex-wrap justify-center text-2xl sm:text-6xl md:text-8xl mb-4 text-center w-full px-6">
+              <div className="text-white flex flex-wrap justify-center text-2xl sm:text-6xl md:text-8xl mb-5 text-center px-6">
 
                 {Title.map((letter, index) => (
                   <motion.span
@@ -102,6 +102,7 @@ export default function Titlepage() {
                   <motion.span
                     key={`title-dis-${index}`}
                     variants={diseVariants[index % diseVariants.length]}
+                    transition={{duration: 0.5 }}
                     initial={{ y: 1000, opacity: 1 }}
                     animate={{ y: 0, opacity: 1, scale: 1, transition: { duration: 0.4, delay: 1 + index * 0.05 } }}
                     exit="exit"
