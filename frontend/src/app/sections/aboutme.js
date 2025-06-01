@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Spline from "@splinetool/react-spline";
 export default function AboutMe() {
     const titleVariants = {
     start: {
@@ -24,21 +23,21 @@ export default function AboutMe() {
     },
   };
   const languages = [
-    { name: "Python", icon: "/" },
-    { name: "JavaScript", icon: "/" },
-    { name: "HTML", icon: "/" },
-    { name: "CSS", icon: "/" },
-    { name: "C++", icon: "/" },
-    { name: "C", icon: "/" },
+    { name: "Python", icon: "/languages/Python icon.svg" },
+    { name: "JavaScript", icon: "/languages/javascript icon.svg" },
+    { name: "HTML", icon: "/languages/html icon.svg" },
+    { name: "CSS", icon: "/languages/css icon.svg" },
+    { name: "C++", icon: "/languages/c++ icon.svg" },
+    { name: "C", icon: "/languages/c icon.svg" },
   ];
 
   const technologies = [
-    { name: "React", icon: "/" },
-    { name: "Git", icon: "/" },
-    { name: "GitHub", icon: "/" },
-    { name: "VS Code", icon: "/" },
-    { name: "Figma", icon: "/" },
-    { name: "Neovim", icon: "/" },
+    { name: "React", icon: "/tech/react icon.svg" },
+    { name: "Git", icon: "/tech/git icon.svg" },
+    { name: "GitHub", icon: "/tech/github icon.svg" },
+    { name: "VS Code", icon: "/tech/vs code icon.svg" },
+    { name: "Figma", icon: "/tech/figma icon.svg" },
+    { name: "Neovim", icon: "/tech/neovim_logo.png" },
   ];
 
   return (
