@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Projects() {
     const leftVariant = {
-    hidden: { opacity: 0, x: -300 },
+    hidden: { opacity: 0, x: -200,transition: { duration: 1 },},
     visible: {
       opacity: 1,
       x: 0,
@@ -13,7 +13,7 @@ export default function Projects() {
   };
 
   const rightVariant = {
-    hidden: { opacity: 0, x: 300 },
+    hidden: { opacity: 0, x: 200,transition: { duration: 1 }, },
     visible: {
       opacity: 1,
       x: 0,
@@ -53,7 +53,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="min-h-screen bg-stone-800 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-zinc-800 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-6xl text-center mb-16 flex justify-center space-x-4 ">
           <motion.span
@@ -81,7 +81,7 @@ export default function Projects() {
               variants={index % 2 === 0 ? leftVariant : rightVariant}
               initial="hidden"
               whileInView="visible"
-              className={`cursor-pointer overflow-hidden relative rounded-xl border-3 border-pink-500 ${project.gridClass}`}
+              className={`cursor-pointer overflow-hidden relative rounded-xl border-2 border-gray-200 duration-500 hover:border-pink-500 ${project.gridClass}`}
             >
               
               <div className="group relative sm:h-72 md:h-80 w-full">
@@ -90,11 +90,11 @@ export default function Projects() {
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute h-80 top-70 left-0 right-0 transition-all duration-500 bg-black group-hover:top-0 bg-opacity-50 p-3">
+                <div className="absolute h-80 top-69 left-0 right-0 transition-all duration-500 bg-zinc-900 group-hover:top-0 bg-opacity-50 p-3">
                   <h3 className="text-white font-semibold text-lg">
                     {project.title}
                   </h3>
-                  <h4 className="text-white font-semibold text-md">
+                  <h4 className="text-white text-md">
                     {project.dis}
                   </h4>
                 </div>
