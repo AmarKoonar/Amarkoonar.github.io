@@ -93,7 +93,7 @@ export default function AboutMe() {
         <motion.div variants={titleVariants} initial="start" whileInView="end"
             className="w-full max-w-md p-6 sm:p-8 border-2  border-gray-200 transition duration-500 ease-linear hover:border-indigo-600 rounded-2xl flex flex-col items-center"
         >
-          <h1 className="text-2xl sm:text-3xl font-bold mb-10 text-white text-center">
+          <h1 className="text-2xl sm:text-3xl  mb-10 text-white text-center">
             Technologies
           </h1>
           <div className="flex flex-wrap justify-center gap-5">
