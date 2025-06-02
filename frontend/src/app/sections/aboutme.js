@@ -50,7 +50,7 @@ export default function AboutMe() {
       
       <div className="flex flex-row">
         <motion.div variants={titleVariants} initial="start" whileInView="end" 
-        className="w-full max-w-3xl p-6 border-2 mb-16 border-gray-200 transition duration-500 hover:border-indigo-600 rounded-2xl"
+        className=" max-w-3xl p-6 border-2 mb-16 border-gray-200 transition duration-500 hover:border-indigo-600 rounded-2xl"
         >
             <p className="text-base sm:text-lg leading-relaxed text-gray-300">
             I am a passionate and driven Computer Science student at Simon Fraser
@@ -91,15 +91,15 @@ export default function AboutMe() {
         </motion.div>
 
         <motion.div variants={titleVariants} initial="start" whileInView="end"
-            className="w-full max-w-md p-6 sm:p-8 border-2  border-gray-200 transition duration-500 hover:border-indigo-600 rounded-2xl flex flex-col items-center"
+            className="w-full max-w-md p-6 sm:p-8 border-2  border-gray-200 transition duration-500 ease-linear hover:border-indigo-600 rounded-2xl flex flex-col items-center"
         >
-          <h1 className="text-2xl sm:text-3xl font-bold mb-10 text-white text-center">
+          <h1 className="text-2xl sm:text-3xl  mb-10 text-white text-center">
             Technologies
           </h1>
           <div className="flex flex-wrap justify-center gap-5">
             {technologies.map((lang) => (
               <div className="group" key={lang.name}>
-                <div className="flex  duration-20000 transform group-hover:rotate-y-3600 group-hover:rotate-z-3600 group-hover:rotate-x-3600 justify-center items-center w-14 h-14 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-400 transition-all group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-yellow-400">
+                <div className="flex  duration-30000 transform group-hover:rotate-y-3600 group-hover:rotate-z-3600 group-hover:rotate-x-3600 justify-center items-center w-14 h-14 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-400 transition-all group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-yellow-400">
                   <div className="relative w-12 h-12">
                     <Image src={lang.icon} alt={lang.name} fill sizes="48px" className="object-contain group-hover:brightness-125"
                     />
