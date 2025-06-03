@@ -50,7 +50,7 @@ export default function AboutMe() {
       
       <div className="flex flex-row">
         <motion.div variants={titleVariants} initial="start" whileInView="end" 
-        className=" max-w-3xl p-6 border-2 mb-16 border-gray-200 transition duration-500 hover:border-indigo-600 rounded-2xl"
+        className=" max-w-3xl p-6 border-2 mb-16 border-gray-200 transition duration-500 shadow-indigo-500 hover:shadow-2xl  hover:border-indigo-600 rounded-2xl"
         >
             <p className="text-base sm:text-lg leading-relaxed text-gray-300">
             I am a passionate and driven Computer Science student at Simon Fraser
@@ -67,7 +67,7 @@ export default function AboutMe() {
       </div>
       <div className="flex flex-col lg:flex-row gap-14 items-center">
         <motion.div variants={titleVariants} initial="start" whileInView="end"
-          className="w-full max-w-md p-6 sm:p-8 border-2 border-gray-200 transition duration-500 hover:border-indigo-600 rounded-2xl flex flex-col items-center"
+          className="w-full max-w-md p-6 sm:p-8 border-2 border-gray-200 transition duration-500  hover:border-indigo-600 shadow-indigo-500 hover:shadow-2xl rounded-2xl flex flex-col items-center"
         >
           <h1 className="text-2xl sm:text-3xl mb-10 text-white text-center">
             Languages
@@ -91,9 +91,9 @@ export default function AboutMe() {
         </motion.div>
 
         <motion.div variants={titleVariants} initial="start" whileInView="end"
-            className="w-full max-w-md p-6 sm:p-8 border-2  border-gray-200 transition duration-500 ease-linear hover:border-indigo-600 rounded-2xl flex flex-col items-center"
+            className="w-full max-w-md p-6 sm:p-8 border-2  border-gray-200 transition duration-500 ease-linear shadow-indigo-500 hover:shadow-2xl  hover:border-indigo-600 rounded-2xl flex flex-col items-center"
         >
-          <h1 className="text-2xl sm:text-3xl  mb-10 text-white text-center">
+          <h1 className="text-2xl sm:text-3xl mb-10 text-white text-center">
             Technologies
           </h1>
           <div className="flex flex-wrap justify-center gap-5">
