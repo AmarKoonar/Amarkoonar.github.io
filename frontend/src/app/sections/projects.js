@@ -85,7 +85,7 @@ export default function Projects() {
               variants={index % 2 === 0 ? leftVariant : rightVariant}
               initial="hidden"
               whileInView="visible"
-              className={`cursor-pointer overflow-hidden relative rounded-xl border-2 border-gray-200 duration-500 hover:border-pink-500 ${project.gridClass}`}
+              className={`cursor-pointer overflow-hidden relative rounded-xl border-2 border-gray-200 duration-500 hover:border-pink-500 shadow-pink-500 hover:shadow-2xl ${project.gridClass}`}
               onClick={() => window.open(project.link, "_blank")}
             >
               
