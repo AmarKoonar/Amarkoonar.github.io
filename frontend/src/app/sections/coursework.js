@@ -43,7 +43,7 @@ export default function Coursework() {
         "Debugging",
       ],
       link: "https://www.sfu.ca",
-      image: "/images/cmpt225.jpg",
+      image: "/",
     },
     {
       id: 2,
@@ -60,15 +60,15 @@ export default function Coursework() {
         "C",
       ],
       link: "https://www.sfu.ca",
-      image: "/images/cmpt300.jpg",
+      image: "/",
     },
     {
       id: 3,
-      title: "CMPT 376W",
-      description: "Tech Writing & Ethics",
-      tags: ["Writing", "Ethics", "Documentation", "Communication"],
+      title: "CMPT 276",
+      description: "Introduction to Software Engineering",
+      tags: ["Ethics", "SDLC", "Project Managment"],
       link: "https://www.sfu.ca",
-      image: "/images/cmpt376w.jpg",
+      image: "/",
     },
   ];
 
