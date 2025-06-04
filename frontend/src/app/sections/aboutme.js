@@ -43,7 +43,8 @@ export default function AboutMe() {
   return (
     <div className="flex flex-col items-center bg-neutral-900 min-h-screen py-16 px-4">
       <motion.h1 variants={titleVariants} initial="start" whileInView="end"
-        className="text-5xl sm:text-6xl md:text-8xl lg:mb-14 mb-5 text-white text-center"
+        className="text-5xl sm:text-6xl md:text-8xl lg:mb-14 mb-5 text-white text-center shadow-2xl"
+        style={{textShadow:"0 0 30px rgba(99, 102, 241, 1)" }}
       >
         About Me
       </motion.h1>

@@ -59,7 +59,7 @@ export default function Projects() {
   return (
     <div className="min-h-screen bg-zinc-800 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl text-center mb-16 flex justify-center space-x-4 ">
+        <h1 className="text-6xl text-center mb-16 flex justify-center space-x-4 " style={{textShadow:'0 0 30px rgba(236, 72, 153, 0.8)' }}>
           <motion.span
             variants={leftVariant}
             initial="hidden"
@@ -95,11 +95,11 @@ export default function Projects() {
                   alt={project.title}
                   className="w-full h-full object-cover brightness-50"
                 />
-                <div className="absolute h-80 top-69 left-0 right-0 transition-all duration-500 bg-zinc-900 group-hover:top-30 bg-opacity-50 p-3">
-                  <h3 className="text-white font-semibold text-lg">
+                <div className="absolute h-80 top-69 left-0 right-0 transition-all duration-500 bg-zinc-900 group-hover:top-30 bg-opacity-50 p-3" >
+                  <h3 className="text-white font-semibold text-lg" >
                     {project.title}
                   </h3>
-                  <h4 className="text-white text-md">
+                  <h4 className="text-white text-md" style={{textShadow:"0 0 30px rgba(236, 72, 153, 1)" }}>
                     {project.dis}
                   </h4>
                 </div>
