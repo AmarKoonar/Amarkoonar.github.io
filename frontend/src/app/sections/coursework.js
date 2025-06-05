@@ -121,7 +121,7 @@ export default function Coursework() {
   ];
 
   return (
-    <div className="bg-slate-950 min-h-screen flex flex-col items-center">
+    <div className="bg-slate-900 min-h-screen flex flex-col items-center">
       <motion.h1
         variants={bounceInCenter}
         initial="start"

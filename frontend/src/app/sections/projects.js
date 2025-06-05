@@ -57,7 +57,7 @@ export default function Projects() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-800 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-b from-slate-800 to-slate-900 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-6xl text-center mb-16 flex justify-center space-x-4 " style={{ textShadow: "0 0 30px rgba(0, 255, 255, 0.8)" }}>
           <motion.span

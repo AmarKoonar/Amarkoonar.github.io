@@ -7,9 +7,9 @@ export default function AboutMe() {
     start: {
       opacity: 0.1,
       y: 50,
-      scale: 0.8,
+      scale: 0.5,
        transition: {
-        duration: 0.7,
+        duration: 1,
         type: "spring",
         stiffness: 250,
         damping: 15,
@@ -41,7 +41,7 @@ export default function AboutMe() {
   ];
 
   return (
-    <div className="flex flex-col items-center bg-neutral-900 min-h-screen py-16 px-4">
+    <div className="flex flex-col items-center bg-gradient-to-b from-slate-900 to-slate-800 min-h-screen py-16 px-4">
       <motion.h1 variants={titleVariants} initial="start" whileInView="end"
         className="text-5xl sm:text-6xl md:text-8xl lg:mb-14 mb-5 text-white text-center shadow-2xl"
         style={{ textShadow: "0 0 30px rgba(0, 255, 255, 0.8)" }}
