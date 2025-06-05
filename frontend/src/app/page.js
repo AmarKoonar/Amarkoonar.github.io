@@ -4,6 +4,7 @@ import Navbar from "./components/navbar";
 import AboutMe from "./sections/aboutme";
 import Projects from "./sections/projects";
 import Coursework from "./sections/coursework";
+import Resume from "./sections/resume";
 export default function Home() {
   return (
     <>
@@ -12,6 +13,7 @@ export default function Home() {
     <AboutMe></AboutMe>
     <Projects></Projects>
     <Coursework></Coursework>
+    <Resume></Resume>
     </>
   )
 }
