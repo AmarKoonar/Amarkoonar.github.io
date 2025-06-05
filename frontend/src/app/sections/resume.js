@@ -24,7 +24,7 @@ const spining_varient = {
 }
 
   return (
-    <div className="flex flex-col items-center bg-gradient-to-b from-slate-900 to-slate-950 min-h-screen py-16 px-4">
+    <div id="Resume" className="flex flex-col items-center bg-gradient-to-b from-slate-900 to-slate-950 min-h-screen py-16 px-4">
         <motion.h1
                 variants={spining_varient}
                 initial="start"
