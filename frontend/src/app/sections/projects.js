@@ -4,20 +4,20 @@ import { motion } from "framer-motion";
 
 export default function Projects() {
     const leftVariant = {
-    hidden: { opacity: 0, x: -200,transition: { duration: 1 },},
+    hidden: { opacity: 0, x: -300,transition: { duration: 1 },},
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 1 },
+      transition: { duration: 0.8 },
     },
   };
 
   const rightVariant = {
-    hidden: { opacity: 0, x: 200,transition: { duration: 1 }, },
+    hidden: { opacity: 0, x: 300,transition: { duration: 1 }, },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 1 },
+      transition: { duration: 0.8 },
     },
   };
 
@@ -36,7 +36,7 @@ export default function Projects() {
       image: "/projects/pokemon1.png",
       gridClass: "col-span-1 row-span-1",
       link: "https://github.com/AmarKoonar/Pokemon_Library",
-      dis: "TThis project is a Pokédex-style application built with React, Vite, and Bootstrap 5. It features a card-based layout styled with modular CSS, with visual elements that change based on Pokémon types. It’s mainly focused on frontend UI and API usage.",
+      dis: "This project is a Pokédex-style application built with React, Vite, and Bootstrap 5. It features a card-based layout styled with modular CSS, with visual elements that change based on Pokémon types. It’s mainly focused on frontend UI and API usage.",
     },
     {
       id: 3,
@@ -57,9 +57,9 @@ export default function Projects() {
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-800 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-800 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl text-center mb-16 flex justify-center space-x-4 ">
+        <h1 className="text-6xl text-center mb-16 flex justify-center space-x-4 " style={{ textShadow: "0 0 30px rgba(0, 255, 255, 0.8)" }}>
           <motion.span
             variants={leftVariant}
             initial="hidden"
@@ -85,7 +85,8 @@ export default function Projects() {
               variants={index % 2 === 0 ? leftVariant : rightVariant}
               initial="hidden"
               whileInView="visible"
-              className={`cursor-pointer overflow-hidden relative rounded-xl border-2 border-gray-200 duration-500 hover:border-pink-500 shadow-pink-500 hover:shadow-2xl ${project.gridClass}`}
+              className={`cursor-pointer overflow-hidden relative rounded-xl border-2 border-[#00CAFF] transition-[box-shadow,border-color,scale]
+                 duration-500 shadow-[#00CAFF] shadow-xl/30 hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 ${project.gridClass}`}
               onClick={() => window.open(project.link, "_blank")}
             >
               
@@ -95,8 +96,8 @@ export default function Projects() {
                   alt={project.title}
                   className="w-full h-full object-cover brightness-50"
                 />
-                <div className="absolute h-80 top-69 left-0 right-0 transition-all duration-500 bg-zinc-900 group-hover:top-30 bg-opacity-50 p-3">
-                  <h3 className="text-white font-semibold text-lg">
+                <div className="absolute h-80 top-69 left-0 right-0 transition-all duration-500 bg-zinc-900 group-hover:top-30 bg-opacity-50 p-3" >
+                  <h3 className="text-white font-semibold text-lg" >
                     {project.title}
                   </h3>
                   <h4 className="text-white text-md">
