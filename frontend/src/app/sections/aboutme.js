@@ -44,14 +44,15 @@ export default function AboutMe() {
     <div className="flex flex-col items-center bg-neutral-900 min-h-screen py-16 px-4">
       <motion.h1 variants={titleVariants} initial="start" whileInView="end"
         className="text-5xl sm:text-6xl md:text-8xl lg:mb-14 mb-5 text-white text-center shadow-2xl"
-        style={{textShadow:"0 0 30px rgba(99, 102, 241, 1)" }}
+        style={{ textShadow: "0 0 30px rgba(0, 255, 255, 0.8)" }}
       >
         About Me
       </motion.h1>
       
       <div className="flex flex-row">
         <motion.div variants={titleVariants} initial="start" whileInView="end" 
-        className=" max-w-3xl p-6 border-2 mb-16 border-gray-200 transition duration-500 shadow-indigo-500 hover:shadow-2xl  hover:border-indigo-600 rounded-2xl"
+        className=" max-w-3xl p-6 border-2 mb-7  rounded-2xl transition-[box-shadow,border-color,scale] duration-500
+         shadow-xl/30 border-[#00CAFF] shadow-[#00CAFF] hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 "
         >
             <p className="text-base sm:text-lg leading-relaxed text-gray-300">
             I am a passionate and driven Computer Science student at Simon Fraser
@@ -66,9 +67,9 @@ export default function AboutMe() {
             </p>
         </motion.div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-14 items-center">
+      <div className="flex flex-col lg:flex-row gap-6 items-center">
         <motion.div variants={titleVariants} initial="start" whileInView="end"
-          className="w-full max-w-md p-6 sm:p-8 border-2 border-gray-200 transition duration-500  hover:border-indigo-600 shadow-indigo-500 hover:shadow-2xl rounded-2xl flex flex-col items-center"
+          className="w-full max-w-md p-6 sm:p-8 border-2 transition-[box-shadow,border-color,scale] duration-500 shadow-xl/30 border-[#00CAFF] shadow-[#00CAFF] hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 rounded-2xl flex flex-col items-center"
         >
           <h1 className="text-2xl sm:text-3xl mb-10 text-white text-center">
             Languages
@@ -76,14 +77,14 @@ export default function AboutMe() {
           <div className="flex flex-wrap justify-center gap-5">
             {languages.map((lang) => (
               <div className="group" key={lang.name}>
-                <div className="flex duration-500 transform group-hover:rotate-y-360 group-hover:rotate-x-360 group-hover:rotate-z-360 justify-center items-center w-14 h-14 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-400 transition-all group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-yellow-400">
+                <div className="flex duration-500 transform group-hover:rotate-y-360 group-hover:rotate-x-360 group-hover:rotate-z-360 justify-center items-center w-14 h-14 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-400 transition-all group-hover:bg-gradient-to-r group-hover:from-[#00FFDE] group-hover:to-[#00CAFF]">
                   <div className="relative w-12 h-12">
                     <Image src={lang.icon} alt={lang.name} fill sizes="48px"
                       className="object-contain group-hover:brightness-125"
                     />
                   </div>
                 </div>
-                <span className="flex flex-col items-center mt-3 text-sm font-medium text-gray-300 group-hover:text-pink-500 transition-all">
+                <span className="flex flex-col items-center mt-3 text-sm font-medium text-gray-300 group-hover:text-[#00FFDE] transition-all">
                   {lang.name}
                 </span>
               </div>
@@ -92,7 +93,7 @@ export default function AboutMe() {
         </motion.div>
 
         <motion.div variants={titleVariants} initial="start" whileInView="end"
-            className="w-full max-w-md p-6 sm:p-8 border-2  border-gray-200 transition duration-500 ease-linear shadow-indigo-500 hover:shadow-2xl  hover:border-indigo-600 rounded-2xl flex flex-col items-center"
+            className="w-full max-w-md p-6 sm:p-8 border-2 transition-[box-shadow,border-color,scale] duration-500 shadow-xl/30 border-[#00CAFF] shadow-[#00CAFF] hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 rounded-2xl flex flex-col items-center"
         >
           <h1 className="text-2xl sm:text-3xl mb-10 text-white text-center">
             Technologies
@@ -100,13 +101,13 @@ export default function AboutMe() {
           <div className="flex flex-wrap justify-center gap-5">
             {technologies.map((lang) => (
               <div className="group" key={lang.name}>
-                <div className="flex  duration-30000 transform group-hover:rotate-y-3600 group-hover:rotate-z-3600 group-hover:rotate-x-3600 justify-center items-center w-14 h-14 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-400 transition-all group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-yellow-400">
+                <div className="flex  duration-30000 transform group-hover:rotate-y-3600 group-hover:rotate-z-3600 group-hover:rotate-x-3600 justify-center items-center w-14 h-14 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-400 transition-all group-hover:bg-gradient-to-r group-hover:from-[#00FFDE] group-hover:to-[#00CAFF]">
                   <div className="relative w-12 h-12">
                     <Image src={lang.icon} alt={lang.name} fill sizes="48px" className="object-contain group-hover:brightness-125"
                     />
                   </div>
                 </div>
-                <span className="flex flex-col items-center mt-3 text-sm font-medium text-gray-300 group-hover:text-pink-500 transition-all">
+                <span className="flex flex-col items-center mt-3 text-sm font-medium text-gray-300 group-hover:text-[#00FFDE] transition-all">
                   {lang.name}
                 </span>
               </div>
