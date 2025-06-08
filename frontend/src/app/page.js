@@ -5,6 +5,7 @@ import AboutMe from "./sections/aboutme";
 import Projects from "./sections/projects";
 import Coursework from "./sections/coursework";
 import Resume from "./sections/resume";
+import Contact from "./sections/contact";
 export default function Home() {
   return (
     <>
@@ -14,6 +15,7 @@ export default function Home() {
     <Projects></Projects>
     <Coursework></Coursework>
     <Resume></Resume>
+    <Contact></Contact>
     </>
   )
 }
