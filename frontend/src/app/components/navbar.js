@@ -15,8 +15,8 @@ export default function navbar() {
                 <a onClick={() => scrollToId("Title")} className="hover:cursor-pointer hover:underline shadow-xl">Home</a>
                 <a onClick={() => scrollToId("Aboutme")}  className="hover:cursor-pointer hover:underline shadow-xl ">About</a>
                 <a onClick={() => scrollToId("Projects")} className="hover:cursor-pointer hover:underline shadow-xl ">Projects</a>
-                <a onClick={() => scrollToId("Resume")}  className="hover:cursor-pointer hover:underline shadow-xl ">Resume</a>
                 <a onClick={() => scrollToId("Coursework")} className="hover:cursor-pointer hover:underline shadow-xl ">Coursework</a>
+                <a onClick={() => scrollToId("Resume")}  className="hover:cursor-pointer hover:underline shadow-xl ">Resume</a>
                 <a onClick={() => scrollToId("Contact")} className="hover:cursor-pointer hover:underline shadow-xl ">Contact</a>
                 </div>
         </nav>

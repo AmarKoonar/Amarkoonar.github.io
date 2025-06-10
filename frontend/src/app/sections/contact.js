@@ -65,7 +65,7 @@ const fadeScale = {
                 initial="start"
                 whileInView="end"
                  className="flex gap-10 border-2 border-[#00CAFF] transition-[box-shadow,border-color,scale] rounded-xl p-10 
-                 duration-500 shadow-[#00CAFF] shadow-xl/30 hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103">
+                 duration-500 shadow-[#00CAFF] shadow-xl/30 hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 mb-15">
                     {contacts.map((cont) => (
                       <a
                         key={cont.name}

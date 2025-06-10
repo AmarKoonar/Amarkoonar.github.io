@@ -6,6 +6,7 @@ import Projects from "./sections/projects";
 import Coursework from "./sections/coursework";
 import Resume from "./sections/resume";
 import Contact from "./sections/contact";
+import Footer from "./components/footer";
 export default function Home() {
   return (
     <>
@@ -16,6 +17,7 @@ export default function Home() {
     <Coursework></Coursework>
     <Resume></Resume>
     <Contact></Contact>
+    <Footer></Footer>
     </>
   )
 }
