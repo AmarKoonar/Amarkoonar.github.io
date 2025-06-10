@@ -27,6 +27,7 @@ export default function Projects() {
       title: "Thinkforge",
       image: "/projects/thinkforge.png",
       gridClass: "col-span-2 row-span-1",
+      hoverheight: "group-hover:top-43",
       link: "https://github.com/AmrajKoonar/ThinkForge",
       dis: "Thinkforge is a web app that creates quizzes based on user-selected topics and difficulty levels. It’s built with Next.js, Tailwind, and React, and uses the OpenAI API to generate questions in real-time. The backend runs on serverless API routes, and a CI/CD pipeline handles deployment and previews. The project focuses on dynamic content generation and streamlined deployment.",
     },
@@ -35,6 +36,7 @@ export default function Projects() {
       title: "Pokedex web app",
       image: "/projects/pokemon1.png",
       gridClass: "col-span-1 row-span-1",
+      hoverheight: "group-hover:top-38",
       link: "https://github.com/AmarKoonar/Pokemon_Library",
       dis: "This project is a Pokédex-style application built with React, Vite, and Bootstrap 5. It features a card-based layout styled with modular CSS, with visual elements that change based on Pokémon types. It’s mainly focused on frontend UI and API usage.",
     },
@@ -43,6 +45,7 @@ export default function Projects() {
       title: "SFU Weather X Bot",
       image: "/projects/twitterbot.png",
       gridClass: "col-span-1 row-span-1",
+      hoverheight: "group-hover:top-32",
       link: "https://github.com/AmarKoonar/SFU-weather-twitter-bot",
       dis: "TwitterBot is a script that scrapes images and descriptions from websites using BeautifulSoup and posts them to X (Twitter) through its API. It automates the process of finding content and sharing it as tweets with captions. The project combines basic web scraping with automated API posting.",
     },
@@ -51,6 +54,7 @@ export default function Projects() {
       title: "Posture App",
       image: "/projects/flaskapp.png",
       gridClass: "col-span-2 row-span-1",
+      hoverheight: "group-hover:top-43",
       link: "https://github.com/AmarKoonar/posture_corrector",
       dis: "The Posture Detection App is a desktop application that uses a webcam to check sitting posture in real time. It’s built with Flask, MediaPipe, and PyWebView, and packaged with PyInstaller. The app tracks body landmarks to detect slouching and alerts the user when posture needs correcting. It focuses on simple real-time feedback using computer vision.",
     },
@@ -96,7 +100,7 @@ export default function Projects() {
                   alt={project.title}
                   className="w-full h-full object-cover brightness-50"
                 />
-                <div className="absolute h-80 top-69 left-0 right-0 transition-all duration-500 bg-zinc-900 group-hover:top-30 bg-opacity-50 p-3" >
+                <div className={`absolute h-80 top-69 left-0 right-0 transition-all duration-500 bg-zinc-900 ${project.hoverheight} bg-opacity-50 p-3`}>
                   <h3 className="text-white font-semibold text-lg" >
                     {project.title}
                   </h3>
