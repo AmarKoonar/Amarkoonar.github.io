@@ -1,4 +1,4 @@
-import Image from "next/image";
+"use client"
 import Titlepage from "./sections/title";
 import Navbar from "./components/navbar";
 import AboutMe from "./sections/aboutme";
@@ -7,7 +7,11 @@ import Coursework from "./sections/coursework";
 import Resume from "./sections/resume";
 import Contact from "./sections/contact";
 import Footer from "./components/footer";
+import { useEffect } from "react";
 export default function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
     <Navbar/>

@@ -4,20 +4,28 @@ import { motion } from "framer-motion";
 
 export default function Projects() {
     const leftVariant = {
-    hidden: { opacity: 0, x: -300,transition: { duration: 1 },},
+    hidden: { opacity: 0, x: -225,transition: { duration: 0.5 },},
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.8 },
+      transition: {  
+        type: "spring",
+        duration: 1,
+        stiffness: 200,
+        damping: 20, },
     },
   };
 
   const rightVariant = {
-    hidden: { opacity: 0, x: 300,transition: { duration: 1 }, },
+    hidden: { opacity: 0, x: 225,transition: { duration: 0.5 }, },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.8 },
+      transition: {  
+        type: "spring",
+        duration: 1,
+        stiffness: 200,
+        damping: 20, },
     },
   };
 
