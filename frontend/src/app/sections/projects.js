@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Projects() {
     const leftVariant = {
-    hidden: { opacity: 0, x: -225,transition: { duration: 0.5 },},
+    hidden: { opacity: 0, x: '-10vw',transition: { duration: 1 },},
     visible: {
       opacity: 1,
       x: 0,
@@ -17,7 +17,7 @@ export default function Projects() {
   };
 
   const rightVariant = {
-    hidden: { opacity: 0, x: 225,transition: { duration: 0.5 }, },
+    hidden: { opacity: 0, x: '5vw',transition: { duration: 1 }, },
     visible: {
       opacity: 1,
       x: 0,
