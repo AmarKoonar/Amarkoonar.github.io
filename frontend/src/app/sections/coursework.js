@@ -76,7 +76,6 @@ export default function Coursework() {
         "Taylor Series",
         "Parametric Equations",
         "Polar Coordinates",
-        "Applications of Integration",
         "Differential Equations"
     ],
     link: "https://www.sfu.ca/students/calendar/2025/summer/courses/math/152.html",
@@ -90,11 +89,7 @@ export default function Coursework() {
         "Newton's Method",
         "Linear Systems",
         "LU Decomposition",
-        "Interpolation",
         "Numerical Integration",
-        "Error Analysis",
-        "Floating Point Arithmetic",
-        "Stability"
     ],
     link: "https://www.sfu.ca/students/calendar/2025/summer/courses/macm/316.html",
     },
@@ -109,11 +104,6 @@ export default function Coursework() {
         "Determinants",
         "Eigenvalues",
         "Eigenvectors",
-        "Diagonalization",
-        "Inner Products",
-        "Orthogonality",
-        "Basis and Dimension",
-        "Applications to Systems of Equations"
     ],
     link: "https://www.sfu.ca/students/calendar/2025/summer/courses/math/232.html",
     }
