@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 export default function AboutMe() {
     const titleVariants = {
     start: {
@@ -79,7 +78,7 @@ export default function AboutMe() {
               <div className="group" key={lang.name}>
                 <div className="flex duration-500 transform group-hover:rotate-y-360 group-hover:rotate-x-360 group-hover:rotate-z-360 justify-center items-center w-14 h-14 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-400 transition-all group-hover:bg-gradient-to-r group-hover:from-[#00FFDE] group-hover:to-[#00CAFF]">
                   <div className="relative w-12 h-12">
-                    <Image src={lang.icon} alt={lang.name} fill sizes="48px"
+                    <img src={lang.icon} alt={lang.name} fill="true"
                       className="object-contain group-hover:brightness-125"
                     />
                   </div>
@@ -103,7 +102,7 @@ export default function AboutMe() {
               <div className="group" key={lang.name}>
                 <div className="flex  duration-30000 transform group-hover:rotate-y-3600 group-hover:rotate-z-3600 group-hover:rotate-x-3600 justify-center items-center w-14 h-14 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-400 transition-all group-hover:bg-gradient-to-r group-hover:from-[#00FFDE] group-hover:to-[#00CAFF]">
                   <div className="relative w-12 h-12">
-                    <Image src={lang.icon} alt={lang.name} fill sizes="48px" className="object-contain group-hover:brightness-125"
+                    <img src={lang.icon} alt={lang.name} fill="true" className="object-contain group-hover:brightness-125"
                     />
                   </div>
                 </div>
