@@ -22,16 +22,16 @@ export default function AboutMe() {
     },
   };
   const languages = [
-    { name: "Python", icon: "/languages/Python icon.svg" },
+    { name: "Python", icon: "/languages/python_icon.svg" },
     { name: "JavaScript", icon: "/languages/javascript icon.svg" },
     { name: "HTML", icon: "/languages/html icon.svg" },
     { name: "CSS", icon: "/languages/css icon.svg" },
-    { name: "C++", icon: "/languages/c++ icon.svg" },
-    { name: "C", icon: "/languages/c icon.svg" },
+    { name: "C++", icon: "/languages/cpp.svg" },
+    { name: "C", icon: "/languages/c.svg" },
   ];
 
   const technologies = [
-    { name: "React", icon: "/tech/react icon.svg" },
+    { name: "React", icon: "/tech/react_icon.svg" },
     { name: "Git", icon: "/tech/git icon.svg" },
     { name: "GitHub", icon: "/tech/github icon.svg" },
     { name: "VS Code", icon: "/tech/vs code icon.svg" },
