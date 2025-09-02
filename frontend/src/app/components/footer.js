@@ -10,7 +10,7 @@ export default function Footer() {
   return (
     <div className="w-full bg-black transition duration-300 z-50">
 
-            <nav className=" p-3 text-white flex flex-col items-center justify-center duration-500 shadow-xl/30 bg-slate-950 group-hover:shadow-[#00FFDE] border-0 hover:border-[#00FFDE] border-t-[#00CAFF] lg:border-t-2 border-t-1">
+            <nav className=" p-3 text-white flex flex-col items-center justify-center duration-500 group-hover:shadow-[#00FFDE] border-0 hover:border-[#00FFDE] border-t-[#00CAFF] lg:border-t-2 border-t-1 hover:scale-103 glass-effect">
                 <div className="space-x-2 p-0 sm:space-x-4 text-sm sm:text-base mb-7">
                 <a onClick={() => scrollToId("Title")} className="hover:cursor-pointer hover:underline shadow-xl">Home</a>
                 <a>|</a>

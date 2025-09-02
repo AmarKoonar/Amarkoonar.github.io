@@ -41,7 +41,7 @@ const fadeScale = {
 }
 
     return(
-        <div id="Contact" className="bg-slate-950 pb-16 flex flex-col items-center">
+        <div id="Contact" className=" pb-16 flex flex-col items-center">
               <motion.h1
                 variants={fadeScale}
                 initial="start"
@@ -65,7 +65,7 @@ const fadeScale = {
                 initial="start"
                 whileInView="end"
                  className="flex gap-10 border-2 border-[#00CAFF] transition-[box-shadow,border-color,scale] rounded-xl p-10 
-                 duration-500 shadow-[#00CAFF] shadow-xl/30 hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 mb-15">
+                 duration-500 shadow-[#00CAFF] shadow-xl/30 hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 mb-15 glass-effect">
                     {contacts.map((cont) => (
                       <a
                         key={cont.name}

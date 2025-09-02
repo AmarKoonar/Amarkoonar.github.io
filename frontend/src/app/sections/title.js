@@ -75,7 +75,7 @@ export default function Titlepage() {
 
   return (
     <>
-      <div id="Title" className="flex bg-gradient-to-t from-gray-900 to-black flex-col justify-center items-center h-screen">
+      <div id="Title" className="flex  flex-col justify-center items-center h-screen">
         <AnimatePresence>
           {visible && (
             <>

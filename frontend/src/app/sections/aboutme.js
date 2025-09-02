@@ -1,6 +1,9 @@
 "use client";
-
+import { CometCard } from "@/components/ui/comet-card";
 import { motion } from "framer-motion";
+import { DraggableCardBody } from "@/components/ui/draggable-card";
+import { DraggableCardContainer } from "@/components/ui/draggable-card";
+import { useState } from "react";
 export default function AboutMe() {
     const titleVariants = {
     start: {
@@ -38,9 +41,10 @@ export default function AboutMe() {
     { name: "Figma", icon: "/tech/figma icon.svg" },
     { name: "Neovim", icon: "/tech/neovim_logo.png" },
   ];
-
+  const [reset, setReset] = useState([false,false,false,false,false,false]);
+  const [reset1, setReset1] = useState([false,false,false,false,false,false]);
   return (
-    <div id="Aboutme" className="flex flex-col items-center bg-gradient-to-b from-slate-900 to-slate-800 min-h-screen py-16 px-4">
+    <div id="Aboutme" className="flex flex-col items-center  min-h-screen py-16 px-4">
       <motion.h1 variants={titleVariants} initial="start" whileInView="end"
         className="text-5xl sm:text-6xl md:text-8xl lg:mb-14 mb-5 text-white text-center shadow-2xl"
         style={{ textShadow: "0 0 30px rgba(0, 255, 255, 0.8)" }}
@@ -50,8 +54,8 @@ export default function AboutMe() {
       
       <div className="flex flex-row">
         <motion.div variants={titleVariants} initial="start" whileInView="end" 
-        className=" max-w-3xl p-6 border-2 mb-7  rounded-2xl transition-[box-shadow,border-color,scale] duration-500
-         shadow-xl/30 border-[#00CAFF] shadow-[#00CAFF] hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 "
+        className=" max-w-3xl p-6 border-2 mb-7  rounded-2xl backdrop-blur-xs bg-[#00CAFF]/10 hover:bg-[#00FFDE]/10 transition-[box-shadow,border-color,scale,background] duration-500
+         shadow-xl/30 border-[#00CAFF] shadow-[#00CAFF] hover:border-[#00FFDE] hover:shadow-[#00FFDE] glass-effect"
         >
             <p className="text-base sm:text-lg leading-relaxed text-gray-300">
             I am a passionate and driven Computer Science student at Simon Fraser
@@ -68,52 +72,88 @@ export default function AboutMe() {
       </div>
       <div className="flex flex-col lg:flex-row gap-6 items-center">
         <motion.div variants={titleVariants} initial="start" whileInView="end"
-          className="w-full max-w-md p-6 sm:p-8 border-2 transition-[box-shadow,border-color,scale] duration-500 shadow-xl/30 border-[#00CAFF] shadow-[#00CAFF] hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 rounded-2xl flex flex-col items-center"
+          className="w-full max-w-md p-6 sm:p-8 border-2 backdrop-blur-xs bg-[#00CAFF]/10 hover:bg-[#00FFDE]/10 transition-[backdrop-filter,box-shadow,border-color,scale,background] duration-500 shadow-xl/30 border-[#00CAFF] shadow-[#00CAFF] hover:border-[#00FFDE] hover:shadow-[#00FFDE] rounded-2xl flex flex-col items-center glass-effect"
         >
-          <h1 className="text-2xl sm:text-3xl mb-10 text-white text-center">
+          <h1 style={{ textShadow: "0 0 30px rgba(0, 255, 255, 0.8)" }} className="text-2xl sm:text-3xl mb-10 text-white text-center">
             Languages
           </h1>
           <div className="flex flex-wrap justify-center gap-5">
-            {languages.map((lang) => (
-              <div className="group" key={lang.name}>
-                <div className="flex duration-500 transform group-hover:rotate-y-360 group-hover:rotate-x-360 group-hover:rotate-z-360 justify-center items-center w-14 h-14 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-400 transition-all group-hover:bg-gradient-to-r group-hover:from-[#00FFDE] group-hover:to-[#00CAFF]">
-                  <div className="relative w-12 h-12">
-                    <img src={lang.icon} alt={lang.name} fill="true"
-                      className="object-contain group-hover:brightness-125"
+            {languages.map((lang,i) => (
+              <div className="group " key={lang.name} >
+                <div className="absolute bg-zinc-900 rounded-xl w-14 h-14 flex justify-center items-center px-5 hover:cursor-pointer transition-all duration-500 hover:shadow-[#00FFDE] hover:shadow-xl/10" onClick={() => {
+  setReset1(prev => {
+    const next = [...prev];
+    next[i] = true;
+    return next;
+  });
+  setTimeout(() => {
+    setReset1(prev => {
+      const next = [...prev];
+      next[i] = false;
+      return next;
+    });
+  }, 50);
+}}>Reset</div>
+                <DraggableCardBody boundaryId="Aboutme" reset={reset1[i]}>
+                <div className="flex   justify-center items-center w-14 h-14 rounded-lg bg-zinc-900 group-hover:from-[#00FFDE] group-hover:to-[#00CAFF] ">
+                  <div className="relative w-12 h-12 ">
+                    <img src={lang.icon} alt={lang.name} fill="true" className="object-contain group-hover:brightness-125 z-0 rounded-2xl"
                     />
                   </div>
                 </div>
+                </DraggableCardBody>
                 <span className="flex flex-col items-center mt-3 text-sm font-medium text-gray-300 group-hover:text-[#00FFDE] transition-all">
                   {lang.name}
                 </span>
+                
               </div>
             ))}
           </div>
         </motion.div>
 
-        <motion.div variants={titleVariants} initial="start" whileInView="end"
-            className="w-full max-w-md p-6 sm:p-8 border-2 transition-[box-shadow,border-color,scale] duration-500 shadow-xl/30 border-[#00CAFF] shadow-[#00CAFF] hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 rounded-2xl flex flex-col items-center"
+        <motion.div variants={titleVariants} initial="start" whileInView="end" 
+            className="w-full max-w-md p-6 sm:p-8 border-2 backdrop-blur-xs  bg-[#00CAFF]/10 hover:bg-[#00FFDE]/10 transition-[backdrop-filter,box-shadow,border-color,scale,background] duration-500 shadow-xl/30 border-[#00CAFF] shadow-[#00CAFF] hover:border-[#00FFDE] hover:shadow-[#00FFDE] rounded-2xl flex flex-col items-center glass-effect"
         >
-          <h1 className="text-2xl sm:text-3xl mb-10 text-white text-center">
+          
+          <h1 style={{ textShadow: "0 0 30px rgba(0, 255, 255, 0.8)" }} className="text-2xl sm:text-3xl mb-10 text-white text-center">
             Technologies
           </h1>
-          <div className="flex flex-wrap justify-center gap-5">
-            {technologies.map((lang) => (
-              <div className="group" key={lang.name}>
-                <div className="flex  duration-30000 transform group-hover:rotate-y-3600 group-hover:rotate-z-3600 group-hover:rotate-x-3600 justify-center items-center w-14 h-14 rounded-lg bg-gradient-to-r from-indigo-600 to-cyan-400 transition-all group-hover:bg-gradient-to-r group-hover:from-[#00FFDE] group-hover:to-[#00CAFF]">
+          <div className="flex flex-wrap justify-center gap-5" > 
+            {technologies.map((lang,i) => (
+              <div className="group " key={lang.name} >
+                <div className="absolute bg-zinc-900 rounded-xl w-14 h-14 flex justify-center items-center px-5 hover:cursor-pointer transition-all duration-500 hover:shadow-[#00FFDE] hover:shadow-xl/10" onClick={() => {
+  setReset(prev => {
+    const next = [...prev];
+    next[i] = true;
+    return next;
+  });
+  setTimeout(() => {
+    setReset(prev => {
+      const next = [...prev];
+      next[i] = false;
+      return next;
+    });
+  }, 50);
+}}>Reset</div>
+                <DraggableCardBody boundaryId="Aboutme" reset={reset[i]}>
+                <div className="flex   justify-center items-center w-14 h-14 rounded-lg bg-zinc-900 group-hover:from-[#00FFDE] group-hover:to-[#00CAFF] ">
                   <div className="relative w-12 h-12">
-                    <img src={lang.icon} alt={lang.name} fill="true" className="object-contain group-hover:brightness-125"
+                    <img src={lang.icon} alt={lang.name} fill="true" className="object-contain group-hover:brightness-125 z-0 rounded-2xl"
                     />
                   </div>
                 </div>
+                </DraggableCardBody>
                 <span className="flex flex-col items-center mt-3 text-sm font-medium text-gray-300 group-hover:text-[#00FFDE] transition-all">
                   {lang.name}
                 </span>
+                
               </div>
             ))}
           </div>
         </motion.div>
+
       </div>
+      
 
 
 

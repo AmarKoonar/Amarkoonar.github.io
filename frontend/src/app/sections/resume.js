@@ -24,7 +24,7 @@ const spining_varient = {
 }
 
   return (
-    <div id="Resume" className="flex flex-col items-center bg-gradient-to-b from-slate-900 to-slate-950 min-h-screen py-16 px-4">
+    <div id="Resume" className="flex flex-col items-center min-h-screen py-16 px-4">
         <motion.h1
                 variants={spining_varient}
                 initial="start"
@@ -37,7 +37,7 @@ const spining_varient = {
 
              <iframe
             src="/Amars_Resume.pdf"
-            className="w-300 h-[600px] rounded-xl shadow-xl duration-500 hover:border-[#00FFDE] hover:shadow-[#00FFDE]"
+            className="w-300 h-[600px] rounded-xl border-2 border-[#00CAFF] shadow-xl duration-500 hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 glass-effect"
         />
 
         
