@@ -59,7 +59,7 @@ export default function Projects() {
   {
     id: 1,
     title: "GitGood",
-    image: "/projects/gitgood.png",
+    image: "/projects/gitgood.PNG",
     gridClass: "col-span-2 row-span-1 ",
     hoverheight: "group-hover:top-38",
     link: "https://github.com/CMPT-276-SUMMER-2025/final-project-15-mountains/tree/main/src",

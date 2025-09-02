@@ -65,14 +65,15 @@ const fadeScale = {
                 initial="start"
                 whileInView="end"
                  className="flex gap-10 border-2 border-[#00CAFF] transition-[box-shadow,border-color,scale] rounded-xl p-10 
-                 duration-500 shadow-[#00CAFF] shadow-xl/30 hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 mb-15 glass-effect">
+                 duration-500 shadow-[#00CAFF] shadow-xl/30 hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 mb-15 glass-effect bg-[#00CAFF]/10">
                     {contacts.map((cont) => (
+                      <div className="bg-black/30 backdrop-blur-lg rounded-2xl hover:scale-105">
                       <a
                         key={cont.name}
                         href={cont.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group hover:opacity-80 hover:scale-105 transition flex flex-col justify-center items-center "
+                        className="group hover:opacity-80  transition flex flex-col justify-center items-center "
                       >
                         <img
                           src={cont.icon}
@@ -83,7 +84,7 @@ const fadeScale = {
                           {cont.name}
                         </h1>
                       </a>
-                      
+                      </div>
                     ))}
                   </motion.div>
         </div>

@@ -112,7 +112,7 @@ export default function Coursework() {
   );
 
   const [expand, setExpand] = useState(() => Array(coursework.length).fill(false));
-
+  const [activeIndex, setActiveIndex] = useState(null);
   // --- Hover-follow background square state ---
   const gridRef = useRef(null);
   const cardRefs = useRef([]);
@@ -152,7 +152,9 @@ export default function Coursework() {
   const handleEnter = (index) => {
     const el = cardRefs.current[index];
     positionHighlightTo(el);
+    setActiveIndex(index);
     setHovering(true);
+    console.log(coursework[index])
   };
 
   const handleMove = (index) => {
@@ -192,7 +194,7 @@ export default function Coursework() {
               hovering
                 ? {
                     x: expand.some(Boolean) ? 0 : hoverRect.x,
-                    y: expand.some(Boolean) ? 0 : hoverRect.y,
+                    y: expand.some(Boolean) ? 220 : hoverRect.y,
                     width: expand.some(Boolean) ? 1011 :hoverRect.w,
                     height: expand.some(Boolean) ? 300: hoverRect.h,
                     opacity: 1,
@@ -231,11 +233,11 @@ export default function Coursework() {
             <h1 className="text-3xl sm:text-4xl font-bold
                            bg-gradient-to-r from-[#00FFDE] via-[#A5F3FC] to-[#00CAFF]
                            bg-clip-text text-transparent mb-1">
-              MATH 232
+              {coursework[activeIndex].title}
             </h1>
             <p className="text-lg sm:text-xl font-semibold text-[#CCF8FF] flex items-center gap-2">
               <BookOpen className="w-5 h-5 text-[#00FFDE]" />
-              <span>Linear Algebra</span>
+              {coursework[activeIndex].description}
             </p>
           </div>
         </div>
@@ -260,7 +262,7 @@ export default function Coursework() {
         </div>
 
         <motion.div transition={{delay:5}} className="flex flex-wrap gap-3">
-          {tags.map((tag, i) => (
+          {coursework[activeIndex].tags.map((tag, i) => (
             <div
               key={tag}
               className={`px-4 py-2 rounded-full text-sm font-medium
