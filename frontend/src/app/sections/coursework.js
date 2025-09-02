@@ -243,7 +243,7 @@ export default function Coursework() {
         </div>
 
         <a
-          href="https://www.sfu.ca/students/calendar/2025/summer/courses/math/232.html"
+          href={coursework[activeIndex].link}
           target="_blank" rel="noreferrer"
           className={`p-3 rounded-full shadow-lg border border-[#00CAFF]/40
                       bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all duration-300
