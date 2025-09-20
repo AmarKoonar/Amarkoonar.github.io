@@ -294,7 +294,7 @@ export default function Coursework() {
             variants={bounceInCenter}
             initial="start"
             whileInView="end"
-            className="relative z-10 backdrop-blur-xs bg-[#00CAFF]/10 hover:bg-[#00FFDE]/20 overflow-hidden rounded-xl border-2 border-[#00CAFF] transition-[backdrop-filter,box-shadow,border-color] duration-500 shadow-xl/30 shadow-[#00CAFF] hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 w-80 glass-effect"
+            className="relative z-10 brightness-150 backdrop-blur-xs bg-[#00CAFF]/10 hover:bg-[#00FFDE]/20 overflow-hidden rounded-xl border-2 border-[#00CAFF] transition-[backdrop-filter,box-shadow,border-color] duration-500 shadow-xl/30 shadow-[#00CAFF] hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 w-80 glass-effect"
           >
             <div className="group relative  w-full h-20">
               <img

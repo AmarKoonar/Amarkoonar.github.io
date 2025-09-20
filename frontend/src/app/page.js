@@ -38,7 +38,7 @@ export default function Home() {
         }}
       />
       <Navbar/>
-      <Titlepage/>
+      <Titlepage />
       <AboutMe/>
       <Projects/>
       <Coursework/>
