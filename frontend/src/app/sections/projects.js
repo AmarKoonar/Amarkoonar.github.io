@@ -62,9 +62,9 @@ export default function Projects() {
     image: "/projects/gitgood.PNG",
     gridClass: "col-span-2 row-span-1 ",
     hoverheight: "group-hover:top-38",
-    link: "https://github.com/CMPT-276-SUMMER-2025/final-project-15-mountains/tree/main/src",
-    dis: "Web app that generates quizzes in real time based on topics and difficulty. Built with Next.js, Tailwind, and React, using the OpenAI API for question generation. Backend runs on serverless API routes with a CI/CD pipeline for previews and deployment.",
-    status: "active",
+    link: "https://github.com/CMPT-276-SUMMER-2025/final-project-15-mountains",
+    dis: "Web app that that helps developers level up their github accounts by providing AI-generated suggestions for improving code quality, documentation, and best practices. Built with Next.js, Tailwind CSS, shadcn/ui, and OpenAI API.",
+    status: "completed",
     tags: ["Next.js", "Tailwind", "React", "shadcn/ui", "OpenAI", "CI/CD"],
     demoUrl: "https://gitgood-pink.vercel.app/"
   },
@@ -135,7 +135,7 @@ export default function Projects() {
               initial="hidden"
               whileInView="visible"
               className={`overflow-hidden relative rounded-xl border-2 border-[#00CAFF] transition-[box-shadow,border-color,scale]
-                 duration-500 shadow-[#00CAFF] shadow-xl/30 hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 glass-effect ${project.gridClass}`}
+                 duration-500 shadow-[#00CAFF] shadow-xl/30 hover:border-[#00FFDE] hover:shadow-[#00FFDE] glass-effect ${project.gridClass}`}
               // onClick={() => window.open(project.link, "_blank")}
             >
               
@@ -152,7 +152,9 @@ export default function Projects() {
         {project.title}
         {project.demoUrl && (
         <a 
-          
+          href={project.demoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-gray-400 hover:text-white transition-colors"
           aria-label="View Demo"
         >
@@ -165,7 +167,9 @@ export default function Projects() {
       )}
       {project.link && (
         <a 
-          
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-gray-400 hover:text-white transition-colors"
           aria-label="View on GitHub"
         >

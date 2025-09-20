@@ -53,8 +53,8 @@ export default function navbar() {
   }, [hoverIdx]);
 
   return (
-    <div className="w-full flex justify-center">
-    <div className="group fixed transition duration-300 z-50">
+    <div className="w-full flex justify-center ">
+    <div className="group fixed transition duration-300 z-[600]">
       <div className="flex justify-center">
         <nav className="hover:backdrop-blur-lg transition-all duration-500 py-3 px-5 shadow-sm hover:shadow-[#00FFDE] text-white flex flex-wrap justify-between items-center rounded-2xl  bg-zinc-900/30 backdrop-blur-xs group-hover:shadow-[#00FFDE] hover:border-[#00FFDE] border-[#00CAFF]/30 lg:border-1 border-1 ">
           <div
