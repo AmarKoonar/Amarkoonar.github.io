@@ -53,23 +53,18 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
-
 html, body {
   min-height: 100%;
+  margin: 0;
   color: white;
   z-index: 0;
-  /* Base background */
+}
 
-
-  /* Vertical pillar in the middle */
-  background-image: linear-gradient(
-    to right,
-    #0b1020 0%,
-    #0b1020 25%,
-    #202848 50%,  /* bright center */
-    #0b1020 75%,
-    #0b1020 100%
-  );
+body {
+  /* two layered backgrounds:
+     1) diagonal stripes
+     2) vertical pillar
+  */
   background-image:
     repeating-linear-gradient(
       30deg,
@@ -81,16 +76,74 @@ html, body {
     linear-gradient(
       to right,
       #0b1020 0%,
-    #0b1020 25%,
-    #202848 50%,  /* bright center */
-    #0b1020 75%,
-    #0b1020 100%
+      #0b1020 25%,
+      #202848 50%,  /* bright center */
+      #0b1020 75%,
+      #0b1020 100%
     );
 
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  /* stripes cover a larger area so motion looks smooth */
+  background-size: 300% 300%, cover;
+  background-repeat: repeat, no-repeat;
+  background-position: 0 0, center;
+
+  /* animate only the first layer (the stripes) */
+  animation: moveStripes 12s linear infinite;
 }
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  color: white;
+  z-index: 0;
+}
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  color: white;
+  z-index: 0;
+}
+
+body {
+  /* stripes + vertical pillar */
+  background-image:
+    repeating-linear-gradient(
+      30deg,
+      rgba(255, 255, 255, 0.06) 0px,
+      rgba(255, 255, 255, 0.06) 2px,
+      transparent 2px,
+      transparent 15px
+    ),
+    linear-gradient(
+      to right,
+      #0b1020 0%,
+      #0b1020 25%,
+      #202848 50%,  /* bright center */
+      #0b1020 75%,
+      #0b1020 100%
+    );
+
+  background-repeat: repeat, no-repeat;
+  background-size: 300% 300%, cover; /* bigger tile for smoother motion */
+  background-position: 0 0, center;
+
+  animation: moveStripes 100s linear infinite;
+}
+
+@keyframes moveStripes {
+  0% {
+    background-position: 00, center;
+    
+  }
+  100% {
+    background-position: 0 0, center;
+    
+  }
+}
+
+
+
 
 
 @theme inline {
