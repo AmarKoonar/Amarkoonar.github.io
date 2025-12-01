@@ -7,46 +7,46 @@ export default function Titlepage() {
   const TitleVariants = [
     {
       start: { x: -1000, opacity: 0 },
-      end: { x: 0, opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100 } },
+      end: {  z:50,x: 0, opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100 } },
       exit: { x: -1000, opacity: 0, transition: { duration: 0.5 } },
     },
     {
       start: { x: 1000, opacity: 0 },
-      end: { x: 0, opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100 } },
+      end: { z:50, x: 0, opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100 } },
       exit: { x: 1000, opacity: 0, transition: { duration: 0.5 } },
     },
     {
       start: { y: -1000, opacity: 0 },
-      end: { y: 0, opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100 } },
+      end: { z:50,y: 0, opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100 } },
       exit: { y: -1000, opacity: 0, transition: { duration: 0.5 } },
     },
     {
       start: { y: 1000, opacity: 0 },
-      end: { y: 0, opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100 } },
+      end: { z:50,y: 0, opacity: 1, scale: 1, transition: { type: "spring", stiffness: 100 } },
       exit: { y: 1000, opacity: 0, transition: { duration: 0.5 } },
     },
     {
       start: { scale: 5, opacity: 0 },
-      end: { scale: 1, opacity: 1, transition: { type: "spring", stiffness: 100 } },
+      end: { z:50,scale: 1, opacity: 1, transition: { type: "spring", stiffness: 100 } },
       exit: { scale: 5, opacity: 0, transition: { duration: 0.5 } },
     },
   ];
 
   const diseVariants = [
     {
-      exit: { x: -1000, opacity: 0 },
+      exit: { z:50,x: -1000, opacity: 0 },
     },
     {
-      exit: { x: 1000, opacity: 0},
+      exit: { z:50,x: 1000, opacity: 0},
     },
     {
-      exit: { y: -1000, opacity: 0},
+      exit: { z:50,y: -1000, opacity: 0},
     },
     {
-      exit: { y: 1000, opacity: 0},
+      exit: { z:50,y: 1000, opacity: 0},
     },
     {
-      exit: { scale: 5, opacity: 0 },
+      exit: { z:50,scale: 5, opacity: 0 },
     },
   ];
 
@@ -104,7 +104,7 @@ export default function Titlepage() {
                     variants={diseVariants[index % diseVariants.length]}
                     transition={{duration: 0.5 }}
                     initial={{ y: 1000, opacity: 1 }}
-                    animate={{ y: 0, opacity: 1, scale: 1, transition: { duration: 0.4, delay: 1 + index * 0.05 } }}
+                    animate={{ z:50,y: 0, opacity: 1, scale: 1, transition: { duration: 0.4, delay: 1 + index * 0.05 } }}
                     exit="exit"
                     className="mx-1"
                   >

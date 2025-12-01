@@ -45,6 +45,7 @@ export default function Home() {
       <Resume/>
       <Contact/>
       <Footer/>
+      
     </>
   )
 }

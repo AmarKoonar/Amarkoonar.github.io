@@ -10,6 +10,7 @@ export default function Projects() {
     visible: {
       opacity: 5,
       x: 0,
+      z:50,
       transition: {  
         type: "spring",
         duration: 5,
@@ -21,6 +22,7 @@ export default function Projects() {
   const rightVariant = {
     hidden: { opacity: 0, x: '25vw',transition: { duration: 5 }, },
     visible: {
+      z:50,
       opacity: 1,
       x: 0,
       transition: {  

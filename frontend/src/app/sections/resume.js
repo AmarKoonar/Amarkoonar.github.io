@@ -10,6 +10,7 @@ const fade_variant = {
   },
   end: {
     opacity: 1,
+    z:50,
     transition: {
       duration: 0.6,
       ease: "easeOut"

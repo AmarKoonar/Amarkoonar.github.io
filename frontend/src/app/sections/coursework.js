@@ -12,6 +12,7 @@ export default function Coursework() {
     },
     end: {
       x: 0,
+      z:50,
       opacity: 1,
       
     },
@@ -166,7 +167,7 @@ export default function Coursework() {
   const handleLeaveGrid = () => {
     if (!expand.some(Boolean)) setHovering(false);
   };
-
+  const anyExpanded = expand.some(Boolean);
   return (
     <div id="Coursework" className="min-h-screen flex flex-col items-center">
       <motion.h1
@@ -224,11 +225,6 @@ export default function Coursework() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-4">
-          <div className="p-3 rounded-2xl shadow-lg
-                          bg-gradient-to-br from-[#00FFDE]/40 to-[#00CAFF]/40
-                          border border-[#00CAFF]/40 backdrop-blur-sm">
-            <Calculator className="w-7 h-7 text-[#E6FDFF]" />
-          </div>
           <div>
             <h1 className="text-3xl sm:text-4xl font-bold
                            bg-gradient-to-r from-[#00FFDE] via-[#A5F3FC] to-[#00CAFF]
@@ -284,9 +280,12 @@ export default function Coursework() {
 
           </motion.div>
         )}
-
-        {coursework.map((item, index) => (
-          <motion.div
+        
+        {coursework.map((item, index) => {
+          const isActive = hovering && activeIndex === index;       // the one being hovered
+          const dimOthers = hovering && activeIndex !== index;
+          
+          return(<motion.div
             key={item.title}
             ref={(el) => (cardRefs.current[index] = el)}
             onMouseEnter={() => handleEnter(index)}
@@ -294,7 +293,13 @@ export default function Coursework() {
             variants={bounceInCenter}
             initial="start"
             whileInView="end"
-            className="relative z-10 brightness-150 backdrop-blur-xs bg-[#00CAFF]/10 hover:bg-[#00FFDE]/20 overflow-hidden rounded-xl border-2 border-[#00CAFF] transition-[backdrop-filter,box-shadow,border-color] duration-500 shadow-xl/30 shadow-[#00CAFF] hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 w-80 glass-effect"
+           className={`
+            relative z-10 w-80 overflow-hidden rounded-xl border-2 
+            backdrop-blur-xs bg-[#00CAFF]/10 border-[#00CAFF] shadow-xl/30 shadow-[#00CAFF]
+            hover:bg-[#00FFDE]/20  transition-[scale,opacity,shadow,border-color] duration-500
+            ${!dimOthers ? "" : "opacity-40 scale-95"}
+            ${isActive ? "scale-105 border-[#00FFDE] shadow-[#00FFDE]" : ""}
+          `}
           >
             <div className="group relative  w-full h-20">
               <img
@@ -322,7 +327,7 @@ export default function Coursework() {
               </div>
             </div>
           </motion.div>
-        ))}
+);})}
       </div>
     </div>
   );

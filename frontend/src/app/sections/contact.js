@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-
+import { CometCard } from "@/components/ui/comet-card";
 export default function Contact() {
   const contacts = [
   {
@@ -33,10 +33,12 @@ const fadeScale = {
   end: {
     opacity: 1,
     scale: 1,
+    z:50,
     transition: {
       duration: 0.6,
       ease: "easeOut"
     }
+    
   }
 }
 
@@ -65,9 +67,10 @@ const fadeScale = {
                 initial="start"
                 whileInView="end"
                  className="flex gap-10 border-2 border-[#00CAFF] transition-[box-shadow,border-color,scale] rounded-xl p-10 
-                 duration-500 shadow-[#00CAFF] shadow-xl/30 hover:border-[#00FFDE] hover:shadow-[#00FFDE] hover:scale-103 mb-15 glass-effect bg-[#00CAFF]/10">
+                 duration-500 shadow-[#00CAFF] shadow-xl/30 hover:border-[#00FFDE] hover:shadow-[#00FFDE] mb-15 glass-effect bg-[#00CAFF]/10 transform-gpu">
                     {contacts.map((cont) => (
-                      <div className="bg-black/30 backdrop-blur-lg rounded-2xl hover:scale-105">
+                      <CometCard>
+                      <div className="bg-black/30 backdrop-blur-lg rounded-full p-5 hover:scale-105 hover:rotate-360 transition-transform duration-500 border-2 border-[#00CAFF] hover:border-[#00FFDE] shadow-lg shadow-[#00CAFF]/50 hover:shadow-[#00FFDE]/50">
                       <a
                         key={cont.name}
                         href={cont.link}
@@ -85,6 +88,7 @@ const fadeScale = {
                         </h1>
                       </a>
                       </div>
+                      </CometCard>
                     ))}
                   </motion.div>
         </div>

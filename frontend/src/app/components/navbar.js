@@ -56,7 +56,8 @@ export default function navbar() {
     <div className="w-full flex justify-center ">
     <div className="group fixed transition duration-300 z-[600]">
       <div className="flex justify-center">
-        <nav className="hover:backdrop-blur-lg transition-all duration-500 py-3 px-5 shadow-sm hover:shadow-[#00FFDE] text-white flex flex-wrap justify-between items-center rounded-2xl  bg-zinc-900/30 backdrop-blur-xs group-hover:shadow-[#00FFDE] hover:border-[#00FFDE] border-[#00CAFF]/30 lg:border-1 border-1 ">
+        <nav className="bg-[#00CAFF]/10 hover:bg-[#00FFDE]/10 transition-[box-shadow,border-color,scale,background] duration-500
+         shadow-xl/30 border-[#00CAFF] shadow-[#00CAFF] hover:border-[#00FFDE] hover:shadow-[#00FFDE] glass-effect hover:backdrop-blur-lg  py-3 px-5 shadow-sm  text-white flex flex-wrap justify-between items-center rounded-2xl   backdrop-blur-xs group-hover:shadow-[#00FFDE]  lg:border-1 border-1 ">
           <div
             ref={containerRef}
             className="relative flex items-center gap-2 sm:gap-4 text-sm"

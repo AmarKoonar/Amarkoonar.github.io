@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { DraggableCardBody } from "@/components/ui/draggable-card";
 import { DraggableCardContainer } from "@/components/ui/draggable-card";
 import { useState } from "react";
+import { PixelatedCanvas } from "@/components/ui/pixelated-canvas";
 export default function AboutMe() {
     const titleVariants = {
     start: {
@@ -21,6 +22,7 @@ export default function AboutMe() {
       opacity: 1,
       y: 0,
       scale: 1,
+      z:50,
      
     },
   };
@@ -74,6 +76,7 @@ export default function AboutMe() {
         <motion.div variants={titleVariants} initial="start" whileInView="end"
           className="w-full max-w-md p-6 sm:p-8 border-2 backdrop-blur-xs bg-[#00CAFF]/10 hover:bg-[#00FFDE]/10 transition-[backdrop-filter,box-shadow,border-color,scale,background] duration-500 shadow-xl/30 border-[#00CAFF] shadow-[#00CAFF] hover:border-[#00FFDE] hover:shadow-[#00FFDE] rounded-2xl flex flex-col items-center glass-effect"
         >
+
           <h1 style={{ textShadow: "0 0 30px rgba(0, 255, 255, 0.8)" }} className="text-2xl sm:text-3xl mb-10 text-white text-center">
             Languages
           </h1>
@@ -97,6 +100,7 @@ export default function AboutMe() {
                 <DraggableCardBody boundaryId="Aboutme" reset={reset1[i]}>
                 <div className="flex   justify-center items-center w-14 h-14 rounded-lg bg-zinc-900 group-hover:from-[#00FFDE] group-hover:to-[#00CAFF] ">
                   <div className="relative w-12 h-12 ">
+
                     <img src={lang.icon} alt={lang.name} fill="true" className="object-contain group-hover:brightness-125 z-0 rounded-2xl"
                     />
                   </div>

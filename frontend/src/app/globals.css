@@ -56,17 +56,42 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 
 html, body {
   min-height: 100%;
-  background-image: 
-    radial-gradient(circle at 20% 20%, #111827, transparent 40%),
-    radial-gradient(circle at 80% 0%, #0f766e, transparent 35%),
-    radial-gradient(circle at 0% 100%, #1e3a8a, transparent 35%),
-    url("/stacked-peaks-haikei.svg");
-  background-color: #0b1020;
-  background-size: cover; /* or adjust as needed */
-  background-repeat: no-repeat;
-  background-position: center;
   color: white;
+  z-index: 0;
+  /* Base background */
+
+
+  /* Vertical pillar in the middle */
+  background-image: linear-gradient(
+    to right,
+    #0b1020 0%,
+    #0b1020 25%,
+    #202848 50%,  /* bright center */
+    #0b1020 75%,
+    #0b1020 100%
+  );
+  background-image:
+    repeating-linear-gradient(
+      30deg,
+      rgba(255, 255, 255, 0.06) 0px,
+      rgba(255, 255, 255, 0.06) 2px,
+      transparent 2px,
+      transparent 15px
+    ),
+    linear-gradient(
+      to right,
+      #0b1020 0%,
+    #0b1020 25%,
+    #202848 50%,  /* bright center */
+    #0b1020 75%,
+    #0b1020 100%
+    );
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
+
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
