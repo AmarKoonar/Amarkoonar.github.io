@@ -69,10 +69,9 @@ const fadeScale = {
                  className="flex gap-10 border-2 border-[#00CAFF] transition-[box-shadow,border-color,scale] rounded-xl p-10 
                  duration-500 shadow-[#00CAFF] shadow-xl/30 hover:border-[#00FFDE] hover:shadow-[#00FFDE] mb-15 glass-effect bg-[#00CAFF]/10 transform-gpu">
                     {contacts.map((cont) => (
-                      <CometCard>
+                      <CometCard key={cont.name}>
                       <div className="bg-black/30 backdrop-blur-lg rounded-full p-5 hover:scale-105 hover:rotate-360 transition-transform duration-500 border-2 border-[#00CAFF] hover:border-[#00FFDE] shadow-lg shadow-[#00CAFF]/50 hover:shadow-[#00FFDE]/50">
                       <a
-                        key={cont.name}
                         href={cont.link}
                         target="_blank"
                         rel="noopener noreferrer"

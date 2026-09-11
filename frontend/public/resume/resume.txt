@@ -1,0 +1,49 @@
+Amar Koonar
+236-518-6261|Burnaby, BC|ask41@sfu.ca |LinkedIn|GitHub|Portfolio
+Technical Skills
+Languages: PowerShell, JavaScript, TypeScript, HTML/CSS, Java, C#, Python, C, C++, SQL (PostgreSQL)
+Frameworks: React.js, Next.js, Node.js, ExpressJs, Tailwind CSS
+Developer Tools: Docker, AWS, Cypress, Git, GitHub, Vite, Slack, GDB
+Transferable Skills: Problem-solving, teamwork, communication, time management, adaptability
+Personal Projects
+GitGood|Next.js, React, Tailwind CSS, Shadcn/ui, OpenAI API, Github APIMay 2025. – Aug 2025
+• Developed a web app to help developers level up their GitHub presence with AI-powered tools, beginner-friendly
+issue discovery, and personalized growth insights.
+• Implemented CI/CD pipeline using Vercel and Github Actions for rapid deployment and automated previews.
+• Built and tested end-to-end functionality using Playwright to ensure reliability and intended behavior.
+SFU Weather-Bot|Python, BeautifulSoup API, Twitter APJun. 2024 – Dec. 2024
+• Developed a Python-based Twitter bot to deliver real-time weather, road, and parking updates for SFU campus.
+• Web-scraped images and data about SFU weather conditions using the Python Beautiful Soup library
+• Posted data routinely to Twitter using Twitter API
+Custom Linux Shell|C, Linux, POSIX, System Calls, Process Management
+• Coded a fully functional command-line shell that supports command parsing, and background job execution.
+• Implemented process control usingfork(),exec(), andwait(), enabling multitasking with seprate processes
+• Integrated error handling and signal management (SIGINT,SIGCHLD) to improve robustness and user experience.
+Mini TCP Server|C, Linux, TCP/IP, epoll, Non-blocking I/OFeb. 2025 - May. 2025
+• Developed a lightweight TCP server capable of managing multiple simultaneous client connections.
+• Implemented event-driven concurrency usingepolland non-blocking sockets for efficient request handling.
+• Designed a scalable architecture with support for continuous client communication and graceful connection
+termination.
+Experience
+Junior Full Stack Developer Co-opJan. 2026 – Aug 2026
+Operto Guest Technologies Vancouver, BC
+• Collaborated in an Agile environment using Kanban to manage tasks, priorities, and delivery.
+• Worked on a facade microservice to act as a service layer between backend systems and frontend clients by exposing
+type-safe tRPC endpoints.
+• Worked with AWS services including CloudWatch, S3, DynamoDB, Lambda, Cloudfront, and SQS to support
+cloud-based application development and monitoring.
+• Built an event-driven Google Ads API integration that published data for consumption by downstream services.
+• Optimized a RAG agent by decomposing queries by intent, improving vector database retrieval accuracy.
+• Debugged frontend and backend issues by tracing API requests, reviewing service logs, testing tRPC endpoints, and
+fixing bugs across the full application stack.
+Relevant Coursework
+CMPT 276 - Introduction to Software Engineering
+• Integrated and applied the Software Development Life Cycle (SDLC) with a focus on Agile methodologies.
+• Practiced team collaboration using version control, code reviews, and CI/CD workflows.
+• Utilized RESTful APIs in team projects, handling data exchange and endpoint handling in projects.
+CMPT 201 - Systems Programming
+• Explored process management, file systems, concurrency, Docker, and threading
+• Implemented network communication using TCP and UDP sockets in C, demonstrating proficiency in socket
+programming and client-server architecture.
+Education
+Simon Fraser University|BSc Dean’s Honour Roll in Computing ScienceSept. 2022 – Present

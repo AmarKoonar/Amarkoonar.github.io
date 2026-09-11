@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Amars Website",
-  description: "Portfolio website for Amar Koonar",
+  title: "Amar Koonar — A Developer’s Workspace",
+  description: "Explore Amar Koonar’s workspace: web development projects, computer science at Simon Fraser University, coursework, resume, and contact information.",
 };
 
 export default function RootLayout({ children }) {
