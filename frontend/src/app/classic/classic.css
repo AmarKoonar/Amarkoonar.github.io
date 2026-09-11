@@ -1,0 +1,20 @@
+/* Keep the original blue portfolio independent of the workspace theme. */
+.classic-site {
+  min-height:100vh;
+  overflow-x:clip;
+  color:white;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  background-image:repeating-linear-gradient(30deg,rgba(255,255,255,.06) 0px,rgba(255,255,255,.06) 2px,transparent 2px,transparent 15px),linear-gradient(to right,#0b1020 0%,#0b1020 25%,#202848 50%,#0b1020 75%,#0b1020 100%);
+  background-size:300% 300%,cover;
+  background-repeat:repeat,no-repeat;
+  background-position:0 0,center;
+}
+.classic-site :is(h1,h2,h3,p){margin:revert-layer}
+.classic-site button{font:revert-layer;color:revert-layer;background:revert-layer;border:revert-layer}
+.classic-site iframe{max-width:100%}
+.classic-site .classic-return{position:fixed;bottom:22px;right:22px;z-index:700;padding:12px 18px;border:1px solid #00caff88;border-radius:10px;background:#091225ed;color:#d0f7ff;font:13px/1.4 Arial,sans-serif;box-shadow:0 5px 25px #0006;transition:background .2s}
+.classic-site .classic-return:hover{background:#183b50}
+.classic-site .classic-return:focus-visible{outline:2px solid #00caff;outline-offset:4px}
+@media(max-width:600px){.classic-site .classic-return{bottom:14px;right:14px;font-size:12px;padding:10px 13px}}
+@media(prefers-reduced-motion:reduce){.classic-site *{animation-duration:.01ms!important;transition-duration:.01ms!important}}
