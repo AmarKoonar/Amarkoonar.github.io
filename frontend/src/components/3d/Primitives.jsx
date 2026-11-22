@@ -3,15 +3,15 @@ import { RoundedBox } from '@react-three/drei';
 import { useEffect, useMemo } from 'react';
 import { CanvasTexture, SRGBColorSpace } from 'three';
 
-export function Box({ size = [1, 1, 1], color = '#333732', radius = 0.04, metalness = 0, roughness = 0.55, ...props }) {
+export function Box({ size = [1, 1, 1], color = '#333732', radius = 0.04, metalness = 0, roughness = 0.55, materialProps = {}, ...props }) {
   const safeRadius = Math.min(radius, ...size.map((edge) => edge * 0.49));
-  return <RoundedBox args={size} radius={safeRadius} smoothness={2} castShadow receiveShadow {...props}><meshStandardMaterial color={color} metalness={metalness} roughness={roughness} /></RoundedBox>;
+  return <RoundedBox args={size} radius={safeRadius} smoothness={2} castShadow receiveShadow {...props}><meshStandardMaterial color={color} metalness={metalness} roughness={roughness} {...materialProps} /></RoundedBox>;
 }
 export function BlankSurface({ size, color = '#172729', ...props }) {
   return <mesh {...props}><planeGeometry args={size} /><meshBasicMaterial color={color} toneMapped={false} /></mesh>;
 }
-export function Cylinder({ args = [0.1, 0.1, 1, 20], color = '#333732', ...props }) {
-  return <mesh castShadow receiveShadow {...props}><cylinderGeometry args={args} /><meshStandardMaterial color={color} roughness={0.6} /></mesh>;
+export function Cylinder({ args = [0.1, 0.1, 1, 20], color = '#333732', metalness = 0, roughness = 0.6, ...props }) {
+  return <mesh castShadow receiveShadow {...props}><cylinderGeometry args={args} /><meshStandardMaterial color={color} metalness={metalness} roughness={roughness} /></mesh>;
 }
 // Small, local canvas textures avoid remote fonts, models, and texture downloads.
 export function Label({ text, subtitle = '', color = '#ece4d3', background = '#1c2729', size = [1, 0.55], ...props }) {

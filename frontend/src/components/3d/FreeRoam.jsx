@@ -4,6 +4,7 @@ import { useFrame, useThree } from '@react-three/fiber';
 import { Box3, Euler, Raycaster, Vector2, Vector3, Quaternion, Matrix4 } from 'three';
 import { useWorld } from '../workspace/WorldState';
 import { PLAYER, movePlayer } from '@/lib/player.mjs';
+import { roomCollisionBoxes } from '@/lib/room.mjs';
 
 export default function FreeRoam({focus,onSelect}){
   const world=useWorld(),{camera,gl,invalidate,scene}=useThree();
@@ -56,7 +57,7 @@ export default function FreeRoam({focus,onSelect}){
     else {
       const forward=(keys.current.has('w')||keys.current.has('arrowup')?1:0)-(keys.current.has('s')||keys.current.has('arrowdown')?1:0),side=(keys.current.has('d')||keys.current.has('arrowright')?1:0)-(keys.current.has('a')||keys.current.has('arrowleft')?1:0);
       camera.getWorldDirection(math.forward);math.forward.y=0;math.forward.normalize();math.right.crossVectors(math.forward,new Vector3(0,1,0)).normalize();math.move.copy(math.forward).multiplyScalar(forward).addScaledVector(math.right,side).normalize().multiplyScalar(dt*(keys.current.has('shift')?PLAYER.sprint:PLAYER.walk));
-      const boxes=[new Box3(new Vector3(-4.75,-.11,-2.3),new Vector3(4.75,.11,2.3)),...[-4,4].map(x=>new Box3(new Vector3(x-.1,-2.67,-1.85),new Vector3(x+.1,-.1,1.85)))];
+      const boxes=[...roomCollisionBoxes,new Box3(new Vector3(-4.75,-.11,-2.3),new Vector3(4.75,.11,2.3)),...[-4,4].map(x=>new Box3(new Vector3(x-.1,-2.67,-1.85),new Vector3(x+.1,-.1,1.85)))];
       for(const entry of world.engine.current.entries?.current.values()||[])boxes.push(new Box3().setFromObject(entry.group));
       player.current=movePlayer(player.current,math.move,boxes,dt,jump.current);jump.current=false;
       camera.position.set(player.current.x,player.current.feet+PLAYER.eye,player.current.z);
