@@ -3,7 +3,6 @@ import { createContext, useContext, useEffect, useRef } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import { Box3, Vector3, Quaternion, Plane } from 'three';
 import { useWorld } from '../workspace/WorldContext';
-import { roomSolids } from '@/lib/room.mjs';
 const PhysicsContext=createContext(null);
 let rapierPromise;
 export function PhysicsWorld({children}){
@@ -15,7 +14,6 @@ export function PhysicsWorld({children}){
     rapierPromise ||= import('@dimforge/rapier3d-compat').then(async module=>{const R=module.default||module;await R.init();return R;});
     const R=await rapierPromise;if(!alive.current)throw new Error('Scene closed');if(simulation.current)return simulation.current;
     const world=new R.World({x:0,y:-9.81,z:0});
-    for(const {position,size} of roomSolids)world.createCollider(R.ColliderDesc.cuboid(...size.map(edge=>edge/2)).setTranslation(...position).setFriction(.65));
     world.createCollider(R.ColliderDesc.cuboid(4.75,.11,2.3).setTranslation(0,0,0).setFriction(.65));
     world.createCollider(R.ColliderDesc.cuboid(24,.1,24).setTranslation(0,-2.78,0).setFriction(.8));
     for(const x of [-4,4])world.createCollider(R.ColliderDesc.cuboid(.08,1.28,1.85).setTranslation(x,-1.4,0));

@@ -10,7 +10,6 @@ This progressively enhances the existing Next.js App Router portfolio. JavaScrip
 - `src/components/3d/CameraController.jsx`: scroll timeline and a surface-aligned focus camera. The focus pose is derived from the selected surface’s world position and quaternion, with framing calculated from its dimensions and the viewport.
 - `src/components/3d/InteractiveObject.jsx`: reusable raycast interaction, lift, cursor, and labels.
 - `src/components/3d/Desktop.jsx`: workstation composition, instanced keyboard, accessories, cables, study stack, and raised laptop stand.
-- `src/components/3d/Room.jsx`: enclosed studio with a window opening, curtains, wood flooring, woven rug, cabinet, wall art, and a floor plant. `src/lib/room.mjs` shares static collision bounds between free roam and desk-object physics.
 - `src/components/3d/{Laptop,Monitor,Notebook,Phone}.jsx`: individual navigable objects.
 - `src/components/workspace/Workspace.jsx`: navigation, scroll state, focused-object state, reading view, and failure recovery.
 - `src/components/workspace/PortfolioContent.jsx`: shared semantic HTML and original content links.
@@ -27,19 +26,7 @@ Reduced-motion visitors start in reading view and can opt into stationary transi
 
 ## Rendering budget
 
-The scene uses local procedural geometry and small generated textures, with no remote model or font requests from the 3D layer. Keyboard keys share an instanced draw call. Desktop pixel ratio is capped at 1.5; mobile uses 1. Desktop uses a 2048px key-light shadow map with contact-hardening soft shadows and a 512px lamp shadow map. Mobile keeps one filtered 512px key-light shadow map and a 64px reflection environment, disables lamp shadows and soft-shadow sampling, and reduces accessories. The renderer uses demand rendering and stops requesting frames after transitions settle. Texture resources and event listeners are disposed on unmount. No postprocessing render passes are used.
-
-Lighting combines a warm window key, cool fill, restrained hemisphere bounce, and a locally generated reflection environment. ACES tone mapping preserves highlights. The lamp's spotlight and target live inside its physical group so the light follows creative-mode movement. `SurfaceMaterials.js` generates deterministic wood, fabric, and stone bump/roughness maps; only color textures use sRGB. The desk has rounded edges and a subtle clear coat, while ceramic and metal use distinct roughness values.
-
-The studio surrounds all cinematic camera positions and has a real opening in the back wall for window light. Its walls and furnishings receive shadows; the window frame casts daylight patterns into the room. Static walls, ceiling, cabinet, and planter participate in walking and throwable-object collisions.
-
-## Studio atmosphere and controls
-
-`src/data/atmospheres.js` defines Daylight, Golden hour, and After hours. The mood control changes the key light, fill, reflected environment, window landscape, and cabinet accent lighting together. Golden hour is the initial mood; a visitor's selection is saved locally when storage is available. Mood changes regenerate the small environment map once, without adding a continuous animation loop.
-
-`WindowView.jsx` draws the mountain scenery locally, including a sunset or moon and stars. `ScreenPreview.js` generates static monitor, terminal, and contact previews; the actual focused content remains accessible, pixel-aligned HTML. The monitor preview uses the existing project data.
-
-`StudioControls.jsx` provides lighting selection, opt-in playback of the existing music track, and a collapsible room-control panel. Object labels are hidden until hovered, active, or enabled in Room controls. Walking, camera reset, and world reset are available in the same panel. The responsive visual treatment is in `studio.css`; mobile gives the introduction its own space above the desk. Reduced-motion, reading view, and WebGL fallback behavior remain available.
+The scene uses local procedural geometry and small generated textures, with no remote model or font requests from the 3D layer. Keyboard keys share an instanced draw call. Desktop pixel ratio is capped at 1.5; mobile uses 1. Mobile disables shadow maps and environment reflections and reduces accessories. The renderer uses demand rendering and stops requesting frames after transitions settle. Texture resources and event listeners are disposed on unmount. No postprocessing render passes are used.
 
 ## Development
 

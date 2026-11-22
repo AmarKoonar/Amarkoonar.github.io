@@ -19,7 +19,7 @@ function Keycaps() {
     }
     mesh.current.instanceMatrix.needsUpdate = true;
   }, []);
-  return <instancedMesh ref={mesh} args={[null, null, 48]} castShadow receiveShadow><boxGeometry args={[0.105, 0.016, 0.087]} /><meshStandardMaterial color="#454b4b" roughness={0.6} /></instancedMesh>;
+  return <instancedMesh ref={mesh} args={[null, null, 48]}><boxGeometry args={[0.105, 0.016, 0.087]} /><meshStandardMaterial color="#454b4b" roughness={0.6} /></instancedMesh>;
 }
 
 export default function Laptop(props) {
@@ -31,13 +31,13 @@ export default function Laptop(props) {
     <Box size={[0.12, 0.65, 0.45]} position={[0, 0.36, -0.12]} rotation={[0.2, 0, 0]} color="#89918b" metalness={0.8} />
     <Box size={[1.64, 0.05, 0.99]} position={[0, 0.69, 0]} color="#727d77" metalness={0.75} />
     <InteractiveObject {...props} onHoverChange={setHovered} id="laptop" label="Terminal / Open laptop" position={[0, 0.77, 0]} labelPosition={[-0.15, 1.5, 0]}>
-    <Box size={[1.85, 0.09, 1.22]} color="#888c88" metalness={0.8} roughness={0.32} />
+    <Box size={[1.85, 0.09, 1.22]} color="#888c88" metalness={0.8} />
     <Box position={[0, 0.052, -0.18]} size={[1.61, 0.013, 0.58]} color="#1a2021" radius={0.005} />
     <Keycaps /><LaptopAudio />
     <Box size={[0.65, 0.008, 0.28]} position={[0, 0.052, 0.35]} color="#a4aaa5" radius={0.012} />
     <group ref={lid} position={[0, 0.04, -0.55]} rotation={[-0.37, 0, 0]}>
       <Box size={[1.85, 1.15, 0.055]} position={[0, 0.565, 0]} color="#555d5c" metalness={0.65} />
-      <HoverScreen kind="terminal" position={[0, 0.58, 0.031]} size={[1.72, 0.98]} />
+      <HoverScreen position={[0, 0.58, 0.031]} size={[1.72, 0.98]} color="#13221c" />
       <Surface id="laptop" label="Linux terminal on the laptop" size={[1.72, 0.98]} position={[0, 0.58, 0.036]} tone="screen"><Terminal /></Surface>
       <mesh position={[0, 1.1, 0.033]}><sphereGeometry args={[0.015, 8, 8]} /><meshBasicMaterial color="#abbcb2" /></mesh>
     </group>

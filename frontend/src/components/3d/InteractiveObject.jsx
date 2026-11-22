@@ -9,7 +9,7 @@ import { useWorld } from '../workspace/WorldContext';
 export default function InteractiveObject({ id, label, position, rotation, labelPosition = [0, 1, 0], active, onSelect, onHoverChange, reducedMotion, children }) {
   const group = useRef();
   const world = useWorld();
-  const { focus, showLabels } = useContext(SurfaceContext);
+  const { focus } = useContext(SurfaceContext);
   const [hovered, setHovered] = useState(false);
   const { gl, invalidate } = useThree();
   useEffect(() => { gl.domElement.style.cursor = hovered ? 'pointer' : 'auto'; invalidate(); return () => { gl.domElement.style.cursor = 'auto'; }; }, [hovered, gl, invalidate]);
@@ -18,7 +18,7 @@ export default function InteractiveObject({ id, label, position, rotation, label
   return <group position={position} rotation={rotation} userData={{ interactionId: id }}>
     <group ref={group} onPointerOver={(e) => { e.stopPropagation(); setHovered(true); }} onPointerOut={() => setHovered(false)} onClick={(e) => { e.stopPropagation(); if (!world.creative) onSelect(id); }}>
       <HoverContext.Provider value={{hovered:enabledHover,reducedMotion}}>{children}</HoverContext.Provider>
-      {!focus && (showLabels || hovered || active) && world.mode !== 'roam' && !world.creative && <Html position={labelPosition} center zIndexRange={[8, 1]} style={{ pointerEvents: 'none' }}>
+      {!focus && world.mode !== 'roam' && !world.creative && <Html position={labelPosition} center zIndexRange={[8, 1]} style={{ pointerEvents: 'none' }}>
         <span className={`object-label ${hovered || active ? 'is-highlighted' : ''}`}><i />{label}<span>↗</span></span>
       </Html>}
     </group>
